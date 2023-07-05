@@ -1,9 +1,12 @@
 package aplicacao;
 
+import jogodetabuleiro.posicao;
+
 public class programa {
 
 	public static void main(String[] args) {
-		System.out.println("testelooo");
+		posicao pos = new posicao(3, 2);
+		System.out.println(pos);
 
 	}
 
