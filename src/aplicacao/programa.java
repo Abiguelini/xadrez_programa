@@ -1,13 +1,13 @@
 package aplicacao;
 
-import jogodetabuleiro.posicao;
-
-public class programa {
+import jogodetabuleiro.*;
+import xadrez.*;
+public class Programa {
 
 	public static void main(String[] args) {
-		posicao pos = new posicao(3, 2);
-		System.out.println(pos);
-
+		
+		PartidaXadrez partidaXadrez = new PartidaXadrez();
+		UI.printTabuleiro(partidaXadrez.getPecaXadrez());
 	}
 
 }

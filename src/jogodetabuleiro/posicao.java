@@ -1,9 +1,9 @@
 package jogodetabuleiro;
 
-public class posicao {
+public class Posicao {
 	private int row;
 	private int collumn;
-	public posicao(int row, int collumn) {
+	public Posicao(int row, int collumn) {
 		
 		this.row = row;
 		this.collumn = collumn;
