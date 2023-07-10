@@ -20,9 +20,13 @@ public class PartidaXadrez {
 		return mat;
 	}
 	
+	public void Novaposicao( char coluna, int linha, PecaXadrez peca) {
+		tabuleiro.LugaresPeca(peca, new Novaposicao(coluna, linha).Toposicao());
+	}
+	
 	public void SetUpInicial() {
-		tabuleiro.LugaresPeca(new Torre(tabuleiro,Cores.BLACK), new Posicao(2, 2));
-		tabuleiro.LugaresPeca(new Torre(tabuleiro,Cores.BLACK), new Posicao(2, 7));
+		Novaposicao('a', 2, new Torre(tabuleiro,Cores.BLACK));
+		Novaposicao('h', 5, new Torre(tabuleiro,Cores.BLACK));
 	}
 
 }
