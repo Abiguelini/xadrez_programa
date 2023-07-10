@@ -22,6 +22,7 @@ public class PartidaXadrez {
 	
 	public void SetUpInicial() {
 		tabuleiro.LugaresPeca(new Torre(tabuleiro,Cores.BLACK), new Posicao(2, 2));
+		tabuleiro.LugaresPeca(new Torre(tabuleiro,Cores.BLACK), new Posicao(2, 7));
 	}
 
 }
