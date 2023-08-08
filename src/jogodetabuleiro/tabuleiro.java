@@ -41,7 +41,7 @@ public class Tabuleiro {
 	
 	public void LugaresPeca (Peca peca, Posicao posicao) {
 		if (TemUmaPeca(posicao)) {
-			throw new ExcecaoJogo("Já existe outra peça aqui.");
+			throw new ExcecaoJogo("Já existe outra peça aqui." + posicao);
 
 		}
 		pecas[posicao.getRow()][posicao.getCollumn()] = peca;

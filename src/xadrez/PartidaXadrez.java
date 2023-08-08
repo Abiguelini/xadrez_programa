@@ -26,11 +26,11 @@ public class PartidaXadrez {
 		Posicao origem = posicaoOrigem.Toposicao();
 		Posicao fifi = posicaoFinal.Toposicao();
 		validarPosicaoOrigem (origem);
-		Peca pecaCapturada = moverPeca( origem , fifi);
+		Peca pecaCapturada = makePeca( origem , fifi);
 		return  (PecaXadrez)pecaCapturada;
 		
 	}
-	public Peca moverPeca (Posicao origem, Posicao fifi) {
+	public Peca makePeca (Posicao origem, Posicao fifi) {
 		Peca p = tabuleiro.removerPeca(origem);
 		Peca pecaCapturada = tabuleiro.removerPeca(fifi);
 		tabuleiro.LugaresPeca(p, fifi);
