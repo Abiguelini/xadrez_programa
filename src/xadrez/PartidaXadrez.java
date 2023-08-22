@@ -22,10 +22,17 @@ public class PartidaXadrez {
 		return mat;
 	}
 	
+	public boolean[][] movimentosPossiveis(Novaposicao origem){
+		Posicao posicao = origem.Toposicao();
+		validarPosicaoOrigem(posicao);
+		return tabuleiro.peca(posicao).movimentosPossiveis();
+	}
+	
 	public PecaXadrez moverPeca (Novaposicao posicaoOrigem, Novaposicao posicaoFinal) {
 		Posicao origem = posicaoOrigem.Toposicao();
 		Posicao fifi = posicaoFinal.Toposicao();
 		validarPosicaoOrigem (origem);
+		validarPosicaoFinal(origem, fifi);
 		Peca pecaCapturada = makePeca( origem , fifi);
 		return  (PecaXadrez)pecaCapturada;
 		
@@ -39,11 +46,17 @@ public class PartidaXadrez {
 	}
 	
 	private void validarPosicaoOrigem(Posicao posicao) {
-		if (!tabuleiro.PosicaoExiste(posicao)) {
+		if (!tabuleiro.TemUmaPeca(posicao)) {
 			throw new ExcecaoXadrez("Não existe peça na posição de origem");
 		}
 		if (!tabuleiro.peca(posicao).existeMovimento()) {
 			throw new ExcecaoXadrez("Não existe movimentos possiveis.");
+		}
+	}
+	
+	private void validarPosicaoFinal(Posicao origem, Posicao fifi) {
+		if (!tabuleiro.peca(origem).movimentosPossiveis(fifi)) {
+			throw new ExcecaoXadrez("Peça escolhida não pode se mover para posição escolhida");
 		}
 	}
 	

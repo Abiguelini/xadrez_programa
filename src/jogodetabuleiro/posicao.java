@@ -19,6 +19,13 @@ public class Posicao {
 	}
 	public void setCollumn(int collumn) {
 		this.collumn = collumn;
+	
+	}
+	
+	public void darValores (int row,  int collumn) {
+		
+		this.row = row;
+		this.collumn = collumn;
 	}
 	@Override
 	public String toString() {
