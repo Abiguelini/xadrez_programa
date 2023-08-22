@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import xadrez.Cores;
 import xadrez.Novaposicao;
+import xadrez.PartidaXadrez;
 import xadrez.PecaXadrez;
 
 public class UI {
@@ -47,7 +48,16 @@ public class UI {
 			System.out.flush();
 		}
 	
-	public static void printTabuleiro (PecaXadrez [][] pecas) {
+	
+		
+		public static void printGame (PartidaXadrez partidaXadrez){
+			printTabuleiro(partidaXadrez.getPecaXadrez());
+			System.out.println();
+			System.out.println("Turno: " + partidaXadrez.getTurno());
+			System.out.println("Esperando jogador... " + partidaXadrez.GetjogadorAtual());
+		}
+		
+		public static void printTabuleiro (PecaXadrez [][] pecas) {
 		for (int i = 0; i < pecas.length; i++) {
 			System.out.print((8 - i) + " ");
 			for (int j = 0; j < pecas.length; j++) {
