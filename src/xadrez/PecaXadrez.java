@@ -19,4 +19,8 @@ public abstract class PecaXadrez  extends Peca{
 		PecaXadrez p = (PecaXadrez)getTabuleiro().peca(posicao);
 		return p != null && p.getcores() != cores;
 	}
+	
+	public Novaposicao getNovaposicao() {
+		return Novaposicao.FromPosition(posicao);
+	}
 }

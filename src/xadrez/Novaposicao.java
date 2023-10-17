@@ -28,7 +28,7 @@ public class Novaposicao {
 		return new Posicao( 8 - linha, coluna - 'a' );
 	}
 	protected static Novaposicao FromPosition(Posicao posicao) {
-		return new Novaposicao((char)('a' - posicao .getCollumn()), (char) (8 - posicao.getRow()));
+		return new Novaposicao((char)('a' + posicao .getCollumn()), (char) (8 - posicao.getRow()));
 	}
 		
 

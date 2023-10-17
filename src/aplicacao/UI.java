@@ -1,10 +1,18 @@
 package aplicacao;
 
+<<<<<<< HEAD
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collector;
+=======
+import java.awt.Color;
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;import java.util.stream.Collector;
+>>>>>>> 5d5d5211041444121698aa46ab6eff74d2f5d711
 import java.util.stream.Collectors;
 
 import xadrez.Cores;
@@ -54,13 +62,24 @@ public class UI {
 	
 	
 		
+<<<<<<< HEAD
 		public static void printGame (PartidaXadrez partidaXadrez, List<PecaXadrez>capturadas){
 			printTabuleiro(partidaXadrez.getPecaXadrez());
 			System.out.println();
 			Printpecascapturadas(capturadas);
 			System.out.println();
+=======
+		public static void printGame (PartidaXadrez partidaXadrez, List<PecaXadrez> capturadas){
+			printTabuleiro(partidaXadrez.getPecaXadrez());
+			System.out.println();
+			exibirPecasCapturadas(capturadas);
+			System.out.println("");
+>>>>>>> 5d5d5211041444121698aa46ab6eff74d2f5d711
 			System.out.println("Turno: " + partidaXadrez.getTurno());
 			System.out.println("Esperando jogador... " + partidaXadrez.GetjogadorAtual());
+			if (partidaXadrez.getCheck()) {
+				System.out.println("CHECK! ");
+			}
 		}
 		
 		public static void printTabuleiro (PecaXadrez [][] pecas) {
@@ -105,6 +124,7 @@ public class UI {
         System.out.print(" ");
 	}
 	
+<<<<<<< HEAD
 	private static void Printpecascapturadas(List<PecaXadrez> capturadas) {
 		
 		List<PecaXadrez> branca = capturadas.stream().filter(x -> x.getcores()==Cores.WHITE).collect(Collectors.toList());
@@ -122,4 +142,19 @@ public class UI {
 
 	}
 	
+=======
+	private static void exibirPecasCapturadas (List<PecaXadrez> capturadas) {
+		List<PecaXadrez> white = (List<PecaXadrez>) capturadas.stream().filter(x -> x.getcores() == Cores.WHITE).collect(Collectors.toList());
+		List<PecaXadrez> black = (List<PecaXadrez>) capturadas.stream().filter(x -> x.getcores() == Cores.BLACK).collect(Collectors.toList());
+		System.out.println("pecas capturadas: ");
+		System.out.print("brancas: ");
+		System.out.print(ANSI_WHITE);
+		System.out.println(Arrays.toString(white.toArray()));
+		System.out.print(ANSI_RESET);
+		System.out.print("pretas: ");
+		System.out.print(ANSI_YELLOW);
+		System.out.println(Arrays.toString(black.toArray()));
+		System.out.print(ANSI_RESET);
+	}
+>>>>>>> 5d5d5211041444121698aa46ab6eff74d2f5d711
 }
