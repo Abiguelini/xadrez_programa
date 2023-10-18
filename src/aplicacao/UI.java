@@ -60,9 +60,16 @@ public class UI {
 			Printpecascapturadas(capturadas);
 			System.out.println();
 			System.out.println("Turno: " + partidaXadrez.getTurno());
-			System.out.println("Esperando jogador... " + partidaXadrez.GetjogadorAtual());
-			if(partidaXadrez.getCheck()) {
-				System.out.println("sua partida está em check");
+			if(!partidaXadrez.getCheckMate()) {
+				System.out.println("Esperando jogador... " + partidaXadrez.GetjogadorAtual());
+				if(partidaXadrez.getCheck()) {
+					System.out.println("sua partida está em check");
+				}
+			}
+			else {
+				System.out.println("checkmate");
+				System.out.println("vencedor é o " + partidaXadrez.GetjogadorAtual());
+				
 			}
 		}
 		

@@ -17,6 +17,7 @@ public class PartidaXadrez {
 	private int turno;
 	private Cores jogadorAtual;
 	private boolean check;
+	private boolean checkMate;
 	
 	private List<Peca> pecasNoTabuleiro = new ArrayList<>();
 	private List<Peca> pecasCapturadas = new ArrayList<>();
@@ -39,6 +40,10 @@ public class PartidaXadrez {
 	}
 	public boolean getCheck() {
 		return check;
+	}
+	
+	public boolean getCheckMate(){
+		return checkMate;
 	}
 	
 	
@@ -72,7 +77,12 @@ public class PartidaXadrez {
 		
 		check = (testeCheck(oponente(jogadorAtual))) ? true : false;
 		
-		proximoTurno();	
+		if(testeCheckMate(oponente(jogadorAtual))){
+			checkMate = true;
+		}
+		else {
+			proximoTurno();
+		}
 		return  (PecaXadrez)pecaCapturada;
 		
 	}
@@ -157,23 +167,38 @@ public class PartidaXadrez {
 			return false;
 	}
 	
-	
+	private boolean testeCheckMate(Cores cores) {
+		if (!testeCheck(cores)) {
+			return false;
+		}
+		List <Peca> lista =  pecasNoTabuleiro.stream().filter(x -> ((PecaXadrez)x).getcores()==cores).collect(Collectors.toList());
+		for (Peca p : lista) {
+			boolean [][] matriz = p.movimentosPossiveis();
+			for (int i=0; i<tabuleiro.getColumns(); i++) {
+				for (int j=0; j>tabuleiro.getRows(); j++) {
+					if(matriz[i][j]) {
+						Posicao origem = ((PecaXadrez)p).getNovaposicao().Toposicao();
+						Posicao fifi = new Posicao(i, j);
+						Peca pecaCapturada = makePeca(origem, fifi);
+						DesfazerMovimento(origem, fifi, pecaCapturada);
+						if(!testeCheck(cores));
+					}
+				}
+			}
+		}
+		return true;
+	}
 	
 	
 	public void SetUpInicial() {
-		Novaposicao('c', 1, new Torre(tabuleiro, Cores.WHITE));
-		Novaposicao('c', 2, new Torre(tabuleiro, Cores.WHITE));
-		Novaposicao('d', 2, new Torre(tabuleiro, Cores.WHITE));
-		Novaposicao('e', 2, new Torre(tabuleiro, Cores.WHITE));
-		Novaposicao('e', 1, new Torre(tabuleiro, Cores.WHITE));
-		Novaposicao('d', 1, new Rei(tabuleiro, Cores.WHITE));
+		
+		Novaposicao('h', 7, new Torre(tabuleiro, Cores.WHITE));
+		Novaposicao('d', 1, new Torre(tabuleiro, Cores.WHITE));
+		Novaposicao('e', 1, new Rei(tabuleiro, Cores.WHITE));
 
-		Novaposicao('c', 7, new Torre(tabuleiro, Cores.BLACK));
-		Novaposicao('c', 8, new Torre(tabuleiro, Cores.BLACK));
-		Novaposicao('d', 7, new Torre(tabuleiro, Cores.BLACK));
-		Novaposicao('e', 7, new Torre(tabuleiro, Cores.BLACK));
-		Novaposicao('e', 8, new Torre(tabuleiro, Cores.BLACK));
-		Novaposicao('d', 8, new Rei(tabuleiro, Cores.BLACK));
+		
+		Novaposicao('b', 8, new Torre(tabuleiro, Cores.BLACK));
+		Novaposicao('a', 8, new Rei(tabuleiro, Cores.BLACK));
 	}
 
 }
