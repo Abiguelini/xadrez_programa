@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import jogodetabuleiro.Peca;
 import jogodetabuleiro.Posicao;
 import jogodetabuleiro.Tabuleiro;
+import xadrez.pecas.Peao;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
 
@@ -194,13 +195,32 @@ public class PartidaXadrez {
 	
 	public void SetUpInicial() {
 		
-		Novaposicao('h', 7, new Torre(tabuleiro, Cores.WHITE));
-		Novaposicao('d', 1, new Torre(tabuleiro, Cores.WHITE));
+		Novaposicao('a', 1, new Torre(tabuleiro, Cores.WHITE));
+		Novaposicao('h', 1, new Torre(tabuleiro, Cores.WHITE));
 		Novaposicao('e', 1, new Rei(tabuleiro, Cores.WHITE));
+		Novaposicao('a', 2, new Peao(tabuleiro, Cores.WHITE));
+		Novaposicao('b', 2, new Peao(tabuleiro, Cores.WHITE));
+		Novaposicao('c', 2, new Peao(tabuleiro, Cores.WHITE));
+		Novaposicao('d', 2, new Peao(tabuleiro, Cores.WHITE));
+		Novaposicao('e', 2, new Peao(tabuleiro, Cores.WHITE));
+		Novaposicao('f', 2, new Peao(tabuleiro, Cores.WHITE));
+		Novaposicao('g', 2, new Peao(tabuleiro, Cores.WHITE));
+		Novaposicao('h', 2, new Peao(tabuleiro, Cores.WHITE));
+		
 
 		
-		Novaposicao('b', 8, new Torre(tabuleiro, Cores.BLACK));
-		Novaposicao('a', 8, new Rei(tabuleiro, Cores.BLACK));
+
+		Novaposicao('a', 8, new Torre(tabuleiro, Cores.BLACK));
+		Novaposicao('e', 8, new Torre(tabuleiro, Cores.BLACK));
+		Novaposicao('h', 8, new Rei(tabuleiro, Cores.BLACK));
+		Novaposicao('a', 7, new Peao(tabuleiro, Cores.BLACK));
+		Novaposicao('b', 7, new Peao(tabuleiro, Cores.BLACK));
+		Novaposicao('c', 7, new Peao(tabuleiro, Cores.BLACK));
+		Novaposicao('d', 7, new Peao(tabuleiro, Cores.BLACK));
+		Novaposicao('e', 7, new Peao(tabuleiro, Cores.BLACK));
+		Novaposicao('f', 7, new Peao(tabuleiro, Cores.BLACK));
+		Novaposicao('g', 7, new Peao(tabuleiro, Cores.BLACK));
+		Novaposicao('h', 7, new Peao(tabuleiro, Cores.BLACK));
 	}
 
 }

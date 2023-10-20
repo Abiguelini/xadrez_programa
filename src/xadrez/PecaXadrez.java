@@ -34,4 +34,5 @@ public abstract class PecaXadrez  extends Peca{
 	public Novaposicao getNovaposicao() {
 		return Novaposicao.FromPosition(posicao);
 	}
+	
 }
