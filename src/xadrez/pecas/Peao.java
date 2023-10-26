@@ -26,7 +26,7 @@ public class Peao extends PecaXadrez {
 			}
 			Posicao p2 = new Posicao (posicao.getRow()-2 , posicao.getCollumn());
 			p.darValores(posicao.getRow()-2, posicao.getCollumn());
-			if (getTabuleiro().PosicaoExiste(p) && !getTabuleiro().TemUmaPeca(p)&& getTabuleiro().PosicaoExiste(p2) && !getTabuleiro().TemUmaPeca(p2) && getContadorDeMovimento()==0) {
+			if (getTabuleiro().PosicaoExiste(p) && !getTabuleiro().TemUmaPeca(p)&& getTabuleiro().PosicaoExiste(p2) && !getTabuleiro().TemUmaPeca(p2) && getContadorMov()==0) {
 				mat [p.getRow()][p.getCollumn()] = true;
 			}
 			p.darValores(posicao.getRow()-1, posicao.getCollumn()-1);
@@ -46,7 +46,7 @@ public class Peao extends PecaXadrez {
 			}
 			Posicao p2 = new Posicao (posicao.getRow()+2 , posicao.getCollumn());
 			p.darValores(posicao.getRow()+2, posicao.getCollumn());
-			if (getTabuleiro().PosicaoExiste(p) && !getTabuleiro().TemUmaPeca(p)&& getTabuleiro().PosicaoExiste(p2) && !getTabuleiro().TemUmaPeca(p2) && getContadorDeMovimento()==0) {
+			if (getTabuleiro().PosicaoExiste(p) && !getTabuleiro().TemUmaPeca(p)&& getTabuleiro().PosicaoExiste(p2) && !getTabuleiro().TemUmaPeca(p2) && getContadorMov()==0) {
 				mat [p.getRow()][p.getCollumn()] = true;
 			}
 			p.darValores(posicao.getRow()+1, posicao.getCollumn()-1);

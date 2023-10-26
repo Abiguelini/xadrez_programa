@@ -5,7 +5,7 @@ import jogodetabuleiro.Tabuleiro;
 
 public abstract class PecaXadrez  extends Peca{
 	protected Cores cores;
-	private int contadorDeMovimento;
+	private int contadorMov;
 
 	public PecaXadrez(Tabuleiro tabuleiro, Cores cores) {
 		super(tabuleiro);
@@ -15,15 +15,14 @@ public abstract class PecaXadrez  extends Peca{
 	public Cores getcores() {
 		return cores;
 	}
-	public int getContadorDeMovimento() {
-		return contadorDeMovimento;
+	public int getContadorMov() {
+		return contadorMov;
 	}
-	
-	public void aumentoContador() {
-		 contadorDeMovimento++ ;
+	public void aumentoMov() {
+		contadorMov++;
 	}
-	public void menosContador() {
-		 contadorDeMovimento-- ;
+	public void menosMov() {
+		contadorMov--;
 	}
 	
 	protected boolean pecaOponente(Posicao posicao) {
@@ -34,5 +33,4 @@ public abstract class PecaXadrez  extends Peca{
 	public Novaposicao getNovaposicao() {
 		return Novaposicao.FromPosition(posicao);
 	}
-	
 }
