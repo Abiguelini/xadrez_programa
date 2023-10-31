@@ -12,7 +12,7 @@ import xadrez.Novaposicao;
 import xadrez.PartidaXadrez;
 import xadrez.PecaXadrez;
 
-public class Programa {
+public class programa {
 
 	public static void main(String[] args) {
 		

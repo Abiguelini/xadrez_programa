@@ -2,7 +2,6 @@ package xadrez;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import jogodetabuleiro.Peca;
@@ -11,6 +10,7 @@ import jogodetabuleiro.Tabuleiro;
 import xadrez.pecas.Bispo;
 import xadrez.pecas.Cavalo;
 import xadrez.pecas.Peao;
+import xadrez.pecas.Rainha;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
 
@@ -217,8 +217,10 @@ public class PartidaXadrez {
 		Novaposicao('f', 1, new Bispo(tabuleiro, Cores.WHITE));
 		Novaposicao('b', 1, new Cavalo(tabuleiro, Cores.WHITE));
 		Novaposicao('g', 1, new Cavalo(tabuleiro, Cores.WHITE));
+		Novaposicao('d', 1, new Rainha(tabuleiro, Cores.WHITE));
 
 
+		Novaposicao('d', 8, new Rainha(tabuleiro, Cores.BLACK));
 		Novaposicao('b', 8, new Cavalo(tabuleiro, Cores.BLACK));
 		Novaposicao('g', 8, new Cavalo(tabuleiro, Cores.BLACK));
 		Novaposicao('c', 8, new Bispo(tabuleiro, Cores.BLACK));
