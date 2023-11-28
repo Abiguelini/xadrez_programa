@@ -43,6 +43,12 @@ public class programa {
 				if(pecaCapturada != null) {
 					capturadas.add(pecaCapturada);
 				}
+				
+				if(partidaXadrez.getPromovido()!=null) {
+					System.out.println("digite Q/B/C/T para promoção: ");
+					String tipo = sc.nextLine();
+					partidaXadrez.reporPecaPromovida(tipo);
+				}
 			}
 			catch(ExcecaoJogo e) {
 				System.out.println(e.getMessage());
